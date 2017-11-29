@@ -77,8 +77,13 @@
                 </div>
             @endif
             @extends('layouts.app')
-            @section('content')
-                <h1>Home</h1>
+
+            <div class="content">
+                <div class="title m-b-md">
+                    GPR U.S. Ignite
+                </div>
+
+                 <h1>About Our Research</h1>
                 <p>Underground infrastructure supports main civil services that
                     are critical to daily human living, which include water supply,
                     waste and storm water sewage, natural gas, electric, steam and
@@ -105,20 +110,8 @@
                     This project also provides educational experiences for graduate
                     students and participating municipal utility officials in gigabit
                     network-enabled sensing and underground urban infrastructure. </p>
-                @endsection
-{{--            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>--}}
+            </div>
         </div>
     </body>
 </html>
