@@ -21,8 +21,64 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## Learning Laravel
+## Prerequisites
 
+    sudo apt-get install php7.0 php7.0-cli php7.0-dev
+    libbson-1.0-0 libbson-dev libbson-doc libmongoc-1.0-0 
+    libmongoc-dev libmongoc-doc php7.0-mysql 
+    php7.0-mbstring php7.0-zip
+
+- Ofcourse, Laravel and MongoDB are also prerequisites
+
+       composer global require "laravel/installer"
+More info on installing  [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) 
+
+## Database Management System
+Mongo DB
+You will need to install the PHP MongoDB Driver with [Pecl](http://php.net/manual/en/mongodb.installation.pecl.php)
+
+If you don't have PHP Pecl:
+    
+    sudo apt-get install php-pear
+    
+Please note the path that is mongodb.so that is referenced at this install.
+After installing the Mongodb php driver, configure this extension in the php.ini file
+
+    sudo vi /etc/php/7.0/apache2/php.ini
+by adding the following: 
+
+    extension=/usr/lib/php/20151012/mongodb.so
+    
+This is the same path that is printed after you install the mongo db driver with Pecl.
+
+##Configure your Virtual Host File "/etc/apache2/sites-available/"
+Make sure that this points to the correct project root directory.
+
+    <VirtualHost *:80>
+
+        ServerAdmin webmaster@localhost
+        #DocumentRoot /var/www/html
+        DocumentRoot "/home/deezbeans/Documents/gpr/gpr-project/public"
+        <Directory "/home/deezbeans/Documents/gpr/gpr-project">
+          # Require all granted
+         #  DirectoryIndex index.php
+           Require local
+           Allowoverride All
+        </Directory>
+
+## Install
+
+
+After you have cloned or downloaded this repository, simply put it in your webserver root directory.
+You may have to run 
+
+    sudo a2enmod rewrite
+Now install the dependency manager [Composer](https://getcomposer.org/download/) and run 
+
+    composer install
+
+
+<!---## Learning Laravel 
 Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
 If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
@@ -51,3 +107,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+--->
