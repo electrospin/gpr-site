@@ -33,6 +33,10 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
        composer global require "laravel/installer"
 More info on installing  [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) 
 
+    echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+    source ~/.bashrc
+
+
 ## Database Management System
 Mongo DB
 You will need to install the PHP MongoDB Driver with [Pecl](http://php.net/manual/en/mongodb.installation.pecl.php)
@@ -78,6 +82,13 @@ Now install the dependency manager [Composer](https://getcomposer.org/download/)
     composer install
 
 
+
+## Common issuses with file permission
+After the site is up and running, if you run into any file permission errors,
+you may have to run the following. 
+
+    sudo chmod 775 -R storage/
+    sudo chmod 775 -R bootstrap/cache/
 <!---## Learning Laravel 
 Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
